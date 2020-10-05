@@ -7,5 +7,3 @@ hexo 主题的相关模板官方说明https://hexo.io/zh-cn/docs/front-matter
 
 
 ## 功能待完善
-1. 创建时间 和 更新时间 无法设置 因为我在编写的时候忘了记录
-    使用typora软件 设置开头模板 是否可行 待测试

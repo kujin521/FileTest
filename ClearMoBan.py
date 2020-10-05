@@ -1,7 +1,5 @@
 import os # 读取文件路径
 import io # 输入输出
-import time
-
 
 root = 'D:\OneDrive\hexo\source\_posts\随心记'  # 你的文章地址
 # root = '测试文件夹'  # 本地测试
@@ -31,11 +29,10 @@ for root, subFolder, filenames in os.walk(root):
         # 以 .md 结尾的文件
         if os.path.splitext(filename)[1] == '.md':
             sl=root.split("\\")
-            file = os.path.join(root, filename) # 获取文件路径
             # 要动态修改模板内容
             content = str_modle.format(os.path.splitext(filename)[0], # 获取文件名替换标题
-                                       time.ctime(os.path.getctime(file)),
-                                       time.ctime(os.path.getmtime(file)),
+                                       os.path.getctime(file),
+                                       os.path.getmtime(file),
               # str(list(sl)[6:]),   # 为文章添加多个分类，可以尝试以下 list 中的方法 下标 我这里是 6 开始截取
               sl[6],   # 为文章添加多个分类，可以尝试以下 list 中的方法 下标 我这里是 6 开始截取
               #os.path.splitext(filename)[0])+"\n"

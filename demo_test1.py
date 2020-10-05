@@ -26,13 +26,5 @@ for root, subFolder, filenames in os.walk(root):
         # 以 .md 结尾的文件
         if os.path.splitext(filename)[1] == '.md':
             file=os.path.join(root, filename)
-            print(file,type(file))
-
-            print(time.ctime(os.path.getmtime(file)))
-            sl = root.split("\\")  #
-            print(sl[6])
-            # title=os.path.splitext(filename)[0]  # 获取文件名替换标题
-            # list1=list(sl)[5:]
-            # # str="aa: "+list1
-            # print(str(list1),title)
+            print(time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime(os.path.getmtime(file))))
 

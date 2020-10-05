@@ -12,12 +12,11 @@ import time
 import os
 
 def fileTime(file):
-    return time.ctime(os.path.getmtime(file))
-    # return [
-    #     time.ctime(os.path.getatime(file)),
-    #     time.ctime(os.path.getmtime(file)),
-    #     time.ctime(os.path.getctime(file))
-    # ]
+    return [
+        time.ctime(os.path.getatime(file)),
+        time.ctime(os.path.getmtime(file)),
+        time.ctime(os.path.getctime(file))
+    ]
 
 times = fileTime("E:/pythonObject/FileTest/FileTime_Test.py")
 print(times)

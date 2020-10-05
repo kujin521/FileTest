@@ -34,8 +34,8 @@ for root, subFolder, filenames in os.walk(root):
             file = os.path.join(root, filename) # 获取文件路径
             # 要动态修改模板内容
             content = str_modle.format(os.path.splitext(filename)[0], # 获取文件名替换标题
-                                       time.ctime(os.path.getctime(file)),
-                                       time.ctime(os.path.getmtime(file)),
+                                       time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime(os.path.getmtime(file))),
+                                       time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime(os.path.getctime(file))),
               # str(list(sl)[6:]),   # 为文章添加多个分类，可以尝试以下 list 中的方法 下标 我这里是 6 开始截取
               sl[6],   # 为文章添加多个分类，可以尝试以下 list 中的方法 下标 我这里是 6 开始截取
               #os.path.splitext(filename)[0])+"\n"
